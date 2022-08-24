@@ -1,3 +1,14 @@
+# Notes from Austin
+Use Firebase as a DB
+https://firebase.google.com/docs/database
+
+Sources 
+Rene DLC
+
+YouTube: https://youtu.be/w7ejDZ8SWv8 Channel: Traversy Media
+
+`npm start` cmd in terminal to run 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
