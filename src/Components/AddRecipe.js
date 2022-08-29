@@ -16,7 +16,7 @@ const AddRecipe = ({onAdd, onSelect}) => {
         e.preventDefault()
 
         if(!text){
-            alert('Pleas add text.')
+            alert('Pleas add text.');
             return
         }
 
@@ -26,16 +26,16 @@ const AddRecipe = ({onAdd, onSelect}) => {
         
        // const selected = 'true'
        // onAdd({text, day, calories, carbohydrates, proteins, fats, reminder, selected})
-        const id = Math.floor(Math.random() * 10000) + 1
-        onAdd({text: text,day: day,calories: calories,carbohydrates: carbohydrates,proteins: proteins,fats: fats,reminder: reminder,id: id,})
-        onSelect(id)
-        setText('')
-        setDay('')
-        setCalories('')
-        setCarbohydrates('')
-        setProteins('')
-        setFats('')
-        setReminder(false)
+        const id = Math.floor(Math.random() * 10000) + 1;
+        onAdd({text: text,day: day,calories: calories,carbohydrates: carbohydrates,proteins: proteins,fats: fats,reminder: reminder,id: id,});
+        onSelect(id);
+        setText('');
+        setDay('');
+        setCalories('');
+        setCarbohydrates('');
+        setProteins('');
+        setFats('');
+        setReminder(false);
     }
 
     const twoFucntions = (e) =>{

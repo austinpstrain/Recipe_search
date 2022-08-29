@@ -4,7 +4,8 @@ import Recipes from './Components/Recipes'
 import AddRecipe from './Components/AddRecipe'
 
 function  App() {
-  const [showAddRecipe, setShowAddRecipe] = useState(false)
+  const [showAddRecipe, setShowAddRecipe] = useState(false);
+
 
   //Define recipes here as gloabla state so we can pass it down to components as props
   const [recipes, setRecipes] = useState([
@@ -20,7 +21,8 @@ function  App() {
         selected: 'true',
     },
   ])
-console.log(recipes);
+
+  //console.log(recipes);
   //Toggle Reminder
   const toggleReminder = (id) => {
     setRecipes(
