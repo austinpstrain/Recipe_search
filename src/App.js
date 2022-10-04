@@ -2,10 +2,17 @@ import { useState } from 'react'
 import Header from './Components/Header'
 import Recipes from './Components/Recipes'
 import AddRecipe from './Components/AddRecipe'
+import Results from './Components/Results'
 
 function  App() {
   const [showAddRecipe, setShowAddRecipe] = useState(false);
 
+  const [results, setResults] = useState([
+    {
+      words: [],
+      advanced_words: [],
+    }
+  ])
 
   //Define recipes here as gloabla state so we can pass it down to components as props
   const [recipes, setRecipes] = useState([
@@ -22,7 +29,6 @@ function  App() {
     },
   ])
 
-  //console.log(recipes);
   //Toggle Reminder
   const toggleReminder = (id) => {
     setRecipes(
@@ -69,8 +75,17 @@ function  App() {
       onAdd={() => setShowAddRecipe(!showAddRecipe)}
       showAdd = {showAddRecipe}
       />
-      {showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}
-      {recipes.length > 0 ? (<Recipes recipes={recipes} onDelete={deleteRecipe} onToggle={toggleReminder} onSelect={toggleSelected}/>) : ('No Recipes Added')}
+      <table>
+        <tr>
+          <td>
+            {showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}
+            {recipes.length > 0 ? (<Recipes recipes={recipes} onDelete={deleteRecipe} onToggle={toggleReminder} onSelect={toggleSelected}/>) : ('No Recipes Added')}
+          </td>
+          <td>
+            <Results/>
+          </td>
+        </tr>
+      </table>
     </div>
   );
 }
