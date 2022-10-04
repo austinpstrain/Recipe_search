@@ -1,11 +1,41 @@
 {
     "0": {
             "name": "Chicken Tenders",
-            "calories": 400
-    },
+            "calories": 750,
+            "carbohydrates": 38,
+            "fats": 40,
+            "proteins": 60
+        },
     "1":
         {
-            "name": "Chicken Tenders",
-            "calories": 400
+            "name": "Spaghetti and Meatballs",
+            "calories": 800,
+            "carbohydrates": 85,
+            "fats": 48,
+            "proteins": 44
+        },
+    "2":
+        {
+            "name": "Slice of Pepperoni Pizza",
+            "calories": 315,
+            "carbohydrates": 35,
+            "fats": 15,
+            "proteins": 15
+        },
+    "3":
+        {
+            "name": "Hamburger",
+            "calories": 350,
+            "carbohydrates": 35,
+            "fats": 10,
+            "proteins": 20
+        },
+    "4":
+        {
+            "name": "Hot dog",
+            "calories": 200,
+            "carbohydrates": 20,
+            "fats": 15,
+            "proteins": 10
         }
 }

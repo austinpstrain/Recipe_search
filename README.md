@@ -9,6 +9,14 @@ YouTube: https://youtu.be/w7ejDZ8SWv8 Channel: Traversy Media
 
 `npm start` cmd in terminal to run 
 
+# Git commands
+`git add .` adds newly created files
+`git commit -m "comment"` commit changes to branch with a comment
+`git push` pushes commit to branch.
+`git remote add origin https://github.com/austinpstrain/Recipe_search.git`  set the origin. 
+`git config --global user.name "Austin Strain"` Set user bane to yourself
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

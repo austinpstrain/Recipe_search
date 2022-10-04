@@ -21,5 +21,5 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 const databaseRef = firebase.database().ref();
-export const resultsRef = databaseRef.child("Recipe-finder ");
+export const resultsRef = databaseRef.child("Recipe-finder");
 export default firebase;
