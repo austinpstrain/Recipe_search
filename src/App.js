@@ -7,13 +7,6 @@ import Results from './Components/Results'
 function  App() {
   const [showAddRecipe, setShowAddRecipe] = useState(false);
 
-  const [results, setResults] = useState([
-    {
-      words: [],
-      advanced_words: [],
-    }
-  ])
-
   //Define recipes here as gloabla state so we can pass it down to components as props
   const [recipes, setRecipes] = useState([
     {
