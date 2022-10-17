@@ -1,7 +1,9 @@
+import React from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs } from 'firebase/firestore/lite';
 import { getAnalytics } from "firebase/analytics";
-import { useState } from 'react'
+import { useState } from 'react';
+import { async } from "@firebase/util";
 
 const Results = () => {
   const firebaseConfig = {
@@ -18,22 +20,41 @@ const Results = () => {
   const db = getFirestore(app);
   const analytics = getAnalytics(app);
 
+
+  async function getCities(db) {
+    const recipesCol = collection(db, 'Recipes');
+    const recipesSnapshot = await getDocs(recipesCol);
+    const recipesList = recipesSnapshot.docs.map(doc => doc.data());
+    console.log(recipesList)
+    return recipesList;
+  }
+
+  React.useEffect(()=>{
+    async function readDB() {
+      const querySnapshot = await getDocs(collection(db,"Recipes"));
+      querySnapshot.forEach((doc) => {
+       //console.log(`${doc.id} => ${doc.data()}`);
+      });
+    };
+    readDB();
+  }, []);
+
   const [results, setResults] = useState([
     {
       results: [],
     }
   ]);
 
-  const importData = () => {
-    const wordRef = app.database.ref('Recipes')
-  }
 
-  
+  const importData = () => {
+    const wordRef = app.database().ref('Recipes');
+ 
+  }
  
   return (
     // When we use .map, and output a JSK, that is called a list. Parten (h3) of list needs a key defined
     <>
-    <p>Pee Pee Poo Poo</p>
+    <p>peepee poopoo</p>
     </>
   )
 }
