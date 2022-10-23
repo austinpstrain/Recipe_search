@@ -69,15 +69,17 @@ function  App() {
       showAdd = {showAddRecipe}
       />
       <table>
-        <tr>
-          <td>
-            {showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}
-            {recipes.length > 0 ? (<Recipes recipes={recipes} onDelete={deleteRecipe} onToggle={toggleReminder} onSelect={toggleSelected}/>) : ('No Recipes Added')}
-          </td>
-          <td>
-            <Results/>
-          </td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>
+              {showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}
+              {recipes.length > 0 ? (<Recipes recipes={recipes} onDelete={deleteRecipe} onToggle={toggleReminder} onSelect={toggleSelected}/>) : ('No Recipes Added')}
+            </td>
+            <td>
+              <Results/>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </div>
   );

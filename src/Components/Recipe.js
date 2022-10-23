@@ -24,7 +24,8 @@ const Recipe = ({ recipe, onDelete, onToggle, onSelect }) => {
                     
                 </h3>
                 <p><b>{recipe.day}</b></p>
-                <table >
+                <table>
+                    <tbody>
                     <tr>
                         <td>Calories</td>
                         <td>{recipe.calories}</td>
@@ -41,6 +42,7 @@ const Recipe = ({ recipe, onDelete, onToggle, onSelect }) => {
                         <td>Fats</td>
                         <td>{recipe.fats}</td>
                     </tr>
+                    </tbody>
                 </table>
             </div>
             
