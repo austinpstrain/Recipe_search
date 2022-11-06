@@ -7,11 +7,10 @@ const Recipe = ({ recipe, onDelete, onToggle, onSelect }) => {
             <FaTimes style={{ float: 'right', marginRight: '2%', marginTop: '1%', color: 'red', cursor: 'pointer', }} onClick={() => onDelete(recipe.id)}/>
             <div
             // Notice use of backtick (`) to set className to recipe.reminder if reminder is true
-            //className={`recipe ${recipe.selected ? "selected" : ""}`}
+            
             className={`recipe ${recipe.selected === 'true' && "selected"}`}
             onDoubleClick={() => onToggle(recipe.id)}
-            onClick={() => onSelect(recipe.id)}
-            
+            onClick={() => onSelect(recipe.id)}            
             >
                 <h3>
                     {recipe.reminder ? 
@@ -20,8 +19,6 @@ const Recipe = ({ recipe, onDelete, onToggle, onSelect }) => {
                     marginLeft: '-40px', fontSize:'150%' }} 
                     /> : ""}
                     {recipe.text}
-                    <p>  selected: {recipe.selected}</p>
-                    
                 </h3>
                 <p><b>{recipe.day}</b></p>
                 <table>
