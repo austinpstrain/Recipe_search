@@ -1,8 +1,12 @@
+import { useState } from "react";
 import React from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, getDocs} from 'firebase/firestore/lite';
 
 const Results = () => {
+
+  const [DBResults, setDBResults] = useState([]);
+
   const firebaseConfig = {
     apiKey: "AIzaSyAkBkc4-tYi52B9Y4HU9JQ0bixY7-b28bQ",
     authDomain: "recipe-finder-5f0aa.firebaseapp.com",
@@ -17,20 +21,48 @@ const Results = () => {
   const db = getFirestore(app);
 
   React.useEffect(()=>{
+    var newState = [];
     async function readDB() {
-      const citiesCol = collection(db, 'results');
-      const citySnapshot = await getDocs(citiesCol);
-      const cityList = citySnapshot.docs.map(doc => console.log('Data', doc.data()));
+      const recipieCllection = collection(db, 'results');
+      const recipieSnapshot = await getDocs(recipieCllection);
+      const recipeList = recipieSnapshot.docs.map(doc => doc.data());
+      
+      for(let i = 0; i < recipeList.length; i++){
+        newState.push({
+          id: recipeList[i].id,
+          calories: recipeList[i].calories,
+          carbohydrates: recipeList[i].carbohydrates,
+          dat: recipeList[i].day,
+          fats: recipeList[i].fats,
+          proteins: recipeList[i].proteins,
+          reminder: recipeList[i].reminder,
+          text: recipeList[i].text,
+        })
+        
+      }
     };
     readDB();
+    setDBResults(newState);
+    //console.log(newState);
   }, []);
-
+  console.log(DBResults);
   return (
-    // When we use .map, and output a JSK, that is called a list. Parten (h3) of list needs a key defined
-    <>
-    <p>Pee Pee Poo Poo</p>
-    </>
+    <div>
+    <h1>Results</h1>
+    <p>
+    {DBResults.map((result) => result.text)}
+    </p>
+    </div>
   )
 }
 
 export default Results
+
+
+/**
+<p>{DBResults.map((result) => (
+  <li key={result.id}>
+    {result.calories}
+  </li>
+))}
+*/
