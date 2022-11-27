@@ -3,6 +3,7 @@ import Header from './Components/Header'
 import Recipes from './Components/Recipes'
 import AddRecipe from './Components/AddRecipe'
 import Results from './Components/Results'
+import firestoreApi from './API/firestoreApi'
 
 function  App() {
   const [showAddRecipe, setShowAddRecipe] = useState(false);
@@ -60,6 +61,8 @@ function  App() {
   const deleteRecipe = (id) => {
     setRecipes(recipes.filter((recipe) => recipe.id !==id))
   }
+
+  firestoreApi.getDocs().then((response)=>{console.log('Response',response.docs[0].data());})
 
   return (
     // Can only return one element i.e. one div. Other components can be inside
