@@ -5,7 +5,7 @@ import { getFirestore, collection, getDocs} from 'firebase/firestore/lite';
 
 const Results = () => {
 
-  const [DBResults, setDBResults] = useState([{}]);
+  const [DBResults, setDBResults] = useState([]);
 
   const firebaseConfig = {
     apiKey: "AIzaSyAkBkc4-tYi52B9Y4HU9JQ0bixY7-b28bQ",
@@ -43,14 +43,26 @@ const Results = () => {
     };
     readDB();
     setDBResults(newState);
-    console.log(newState);
+    //console.log(newState);
   }, []);
-
+  console.log(DBResults);
   return (
     <div>
-    <p></p>
+    <h1>Results</h1>
+    <p>
+    {DBResults.map((result) => result.text)}
+    </p>
     </div>
   )
 }
 
 export default Results
+
+
+/**
+<p>{DBResults.map((result) => (
+  <li key={result.id}>
+    {result.calories}
+  </li>
+))}
+*/
