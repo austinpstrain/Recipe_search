@@ -21,7 +21,7 @@ const Results = () => {
     <table className="results">
       <tbody>
         <tr>
-          <td><h1>Results</h1></td>
+          <td><h1>Recipes</h1></td>
           <td>Calories</td>
           <td>Proteins</td>
           <td>Carbohydrates</td>
