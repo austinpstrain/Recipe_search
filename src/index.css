@@ -111,6 +111,10 @@ body {
   width: 50%;
 }
 
+.container tr{
+  vertical-align: top;
+}
+
 footer {
   margin-top: 30px;
   text-align: center;
