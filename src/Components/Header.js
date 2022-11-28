@@ -11,17 +11,11 @@ const Header = ({title, onAdd, showAdd}) => {
 }
 
 Header.defaultProps = {
-    title: 'Macro Recipe Search v.2',
+    title: 'Macro Meal Finder V.3',
   }
 
 Header.propTypes = {
     title: PropTypes.string,
 }
-
-// CSS in JS
-// const headingStyle={
-//     color: 'green', 
-//     backgroundColor: 'black', 
-// }
 
 export default Header

@@ -70,11 +70,11 @@ function  App() {
       onAdd={() => setShowAddRecipe(!showAddRecipe)}
       showAdd = {showAddRecipe}
       />
+      <div>{showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}</div>
       <table>
         <tbody>
           <tr>
             <td>
-              {showAddRecipe && <AddRecipe onAdd={addRecipe} toggleSelected={addRecipe}/>}
               {recipes.length > 0 ? (<Recipes recipes={recipes} onDelete={deleteRecipe} onToggle={toggleReminder} onSelect={toggleSelected}/>) : ('No Recipes Added')}
             </td>
             <td>

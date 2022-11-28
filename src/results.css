@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.results{
+    background: #f4f4f4;
+    padding: 2%;
+}
+
+.results td{
+    text-align: center;
+    width: auto;
+}
+
+.dataResults{
+    background-color: #a0d7fc;
+}
+
+.results tr:nth-child(even) {
+    background-color: rgb(166, 247, 166);
+}

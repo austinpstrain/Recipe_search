@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-  max-width: 500px;
+  max-width: 85%;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
@@ -107,6 +107,10 @@ body {
   height: 20px;
 }
 
+.container td{
+  width: 50%;
+}
+
 footer {
   margin-top: 30px;
   text-align: center;
@@ -119,3 +123,4 @@ table{
   padding-top: 2px;
   width: 100%;
 }
+
