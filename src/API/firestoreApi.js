@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, getDocs, addDoc} from 'firebase/firestore/lite';
+import { getFirestore, collection, doc, setDoc, getDocs, addDoc} from 'firebase/firestore/lite';
 
 const startSession = () => {
     const firebaseConfig = {
@@ -24,10 +24,8 @@ const startSession = () => {
       const citySnapshot = getDocs(citiesCol);
       return citySnapshot;
     },
-    addDocs: (data) => {
+    addData: (data) => {
         const db = startSession();
-        const citiesCol = collection(db, 'results');
-        const citySnapshot = getDocs(citiesCol);
-        return citySnapshot;
+        setDoc(doc(db, "results", "results3"), data);
     }
   }

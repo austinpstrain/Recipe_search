@@ -9,7 +9,19 @@ const Results = () => {
 
   const [DBResults, setDBResults] = useState([]);
 
+  const exmpleData = {
+    calories: 1150,
+    carbohydrates: 113,
+    fats: 71,
+    id: "3",
+    price: 8.95,
+    proteins: 11,
+    text: "Korean Fried Cauliflower"
+  };
+
   React.useEffect(()=>{
+    firestoreApi.addData(exmpleData);
+
     firestoreApi.getDocs().then((response)=>{
      const parsedArray = response.docs.map((element)=>element.data());
       setDBResults(parsedArray);
