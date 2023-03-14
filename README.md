@@ -1,13 +1,15 @@
 # Notes from Austin
+
+This web application uses React.Js. Where users can search for menu items based on their nutrient requirements.
+
 Use Firebase as a DB
 https://firebase.google.com/docs/database
 
+`npm start` cmd in terminal to run 
+
 Sources 
 Rene DLC
-
 YouTube: https://youtu.be/w7ejDZ8SWv8 Channel: Traversy Media
-
-`npm start` cmd in terminal to run 
 
 # Git commands
 `git add .` adds newly created files
